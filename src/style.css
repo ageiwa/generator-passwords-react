@@ -10,18 +10,23 @@ body {
     display: flex;
     width: 100vw;
     height: 100vh;
-    background-color: #3b3f42;
-    background-image: linear-gradient(135deg, #595d61, #34383a);
+    background-color: #47aadd;
+    background-image: linear-gradient(135deg, #47aadd, #3885ac);
     align-items: center;
     justify-content: center;
 }
 
 .app {
-    box-shadow: 7px 7px 7px 0px rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.4);
     box-sizing: border-box;
     border-radius: 10px;
-    padding: 20px;
     width: 345px;
     height: 520px;
     background-color: #303235;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
