@@ -3,6 +3,7 @@ import './style.css';
 import Header from './components/Header/index';
 import Password from './components/Password/index';
 import Title from './components/Title/index';
+import LengthPassword from './components/LengthPassword/index';
 
 const App = () => {
     return (
@@ -12,6 +13,9 @@ const App = () => {
                 <Password />
             </div>
             <Title text="LENGTH:" />
+            <div className="wrapper">
+                <LengthPassword />
+            </div>
         </div>
     );
 }
