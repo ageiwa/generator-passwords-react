@@ -4,6 +4,7 @@ import Header from './components/Header/index';
 import Password from './components/Password/index';
 import Title from './components/Title/index';
 import LengthPassword from './components/LengthPassword/index';
+import Setting from './components/Setting/index';
 
 const App = () => {
     return (
@@ -17,6 +18,9 @@ const App = () => {
                 <LengthPassword />
             </div>
             <Title text="SETTINGS:" />
+            <div className="wrapper">
+                <Setting />
+            </div>
         </div>
     );
 }
