@@ -1,14 +1,19 @@
 .setting-container {
     display: flex;
+    margin-bottom: 5px;
     box-sizing: border-box;
+    border-radius: 5px;
     padding-left: 10px;
     padding-right: 10px;
-    border-radius: 5px;
     width: 300px;
     height: 55px;
     background-color: #58595b;
     align-items: center;
     justify-content: space-between;
+}
+
+.setting-container:last-child {
+    margin-bottom: 0;
 }
 
 .setting-subtitle {
@@ -25,11 +30,23 @@
     height: 28px;
     background-color: #303235;
     align-items: center;
+    transition: .15s;
+    cursor: pointer;
+}
+
+.btn-switch-on {
+    background-color: #368db9;
 }
 
 .switch-slider {
     border-radius: 100%;
     width: 20px;
     height: 20px;
+    background-color: #d8d8d8;
+    transition: .15s;
+}
+
+.switch-slider-on {
+    margin-left: 15px;
     background-color: #f3f3f3;
 }

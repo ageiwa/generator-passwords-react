@@ -19,7 +19,10 @@ const App = () => {
             </div>
             <Title text="SETTINGS:" />
             <div className="wrapper">
-                <Setting />
+                <Setting subtitle="Include Uppercase" />
+                <Setting subtitle="Include Lowercase" />
+                <Setting subtitle="Include Numbers" />
+                <Setting subtitle="Include Symbols" />
             </div>
         </div>
     );
