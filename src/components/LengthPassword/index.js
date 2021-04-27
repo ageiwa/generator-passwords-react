@@ -2,26 +2,22 @@ import React, { useState } from 'react';
 import './style.css';
 
 const LengthPassword = () => {
-    const [progressLine, setProgressLine] = useState('linear-gradient(90deg, #47aadd 43%, #fff 43%)');
+    const [progressLine, setProgressLine] = useState({background: 'linear-gradient(90deg, #47aadd 43%, #fff 43%)'});
 
     function handleInput(e) {
         let inputValue = e.target.value,
             progress = (100 * (inputValue - 4)) / (32 - 4),
             styleLine = 'linear-gradient(90deg, #47aadd ' + progress + '%, #fff ' + progress + '%)';
 
-        setProgressLine(styleLine);
+        setProgressLine({background: styleLine});
     }
-
-    const styleProgressLine = {
-        background: progressLine
-    };
 
     return (
         <div className="length-password-container">
             <p className="value-range">4</p>
             <input 
                 onInput={handleInput}
-                style={styleProgressLine}
+                style={progressLine}
                 className="range-password" 
                 type="range"
                 min="4"

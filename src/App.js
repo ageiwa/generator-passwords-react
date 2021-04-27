@@ -16,6 +16,7 @@ const App = () => {
             <div className="wrapper">
                 <LengthPassword />
             </div>
+            <Title text="SETTINGS:" />
         </div>
     );
 }
