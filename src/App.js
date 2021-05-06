@@ -5,6 +5,7 @@ import Password from './components/Password/index';
 import Title from './components/Title/index';
 import LengthPassword from './components/LengthPassword/index';
 import Setting from './components/Setting/index';
+import BtnGenerate from './components/BtnGenerate/index';
 
 const App = () => {
     return (
@@ -23,6 +24,7 @@ const App = () => {
                 <Setting subtitle="Include Lowercase" />
                 <Setting subtitle="Include Numbers" />
                 <Setting subtitle="Include Symbols" />
+                <BtnGenerate />
             </div>
         </div>
     );
