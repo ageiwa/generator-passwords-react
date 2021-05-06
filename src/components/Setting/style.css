@@ -23,9 +23,9 @@
 .btn-switch {
     display: flex;
     box-sizing: border-box;
+    border-radius: 28px;
     padding-left: 5px;
     padding-right: 5px;
-    border-radius: 28px;
     width: 45px;
     height: 28px;
     background-color: #303235;
