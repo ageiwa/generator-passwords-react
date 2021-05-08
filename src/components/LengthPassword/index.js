@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './style.css';
 
-const LengthPassword = () => {
+const LengthPassword = (props) => {
     const [progressLine, setProgressLine] = useState({background: 'linear-gradient(90deg, #47aadd 43%, #fff 43%)'});
 
     function handleInput(e) {
@@ -10,6 +10,7 @@ const LengthPassword = () => {
             styleLine = 'linear-gradient(90deg, #47aadd ' + progress + '%, #fff ' + progress + '%)';
 
         setProgressLine({background: styleLine});
+        props.updateLength(inputValue);
     }
 
     return (
