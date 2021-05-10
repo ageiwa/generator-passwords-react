@@ -10,7 +10,19 @@ import BtnGenerate from './components/BtnGenerate/index';
 const App = () => {
     const [lengthPass, setLengthPass] = useState(16);
 
+    const [includeUp, setIncludeUp] = useState(true);
+    const [includeLow, setIncludeLow] = useState(false);
+    const [includeNum, setIncludeNum] = useState(false);
+    const [includeSym, setIncludeSym] = useState(false);
+
     const updateLengthPass = (length) => setLengthPass(length);
+
+    const updateIncludeUp = (set) => setIncludeUp(set);
+    const updateIncludeLow = (set) => setIncludeLow(set);
+    const updateIncludeNum = (set) => setIncludeNum(set);
+    const updateIncludeSym = (set) => setIncludeSym(set);
+
+    let accessSet = includeUp + includeLow + includeNum + includeSym;
 
     return (
         <div className="app">
@@ -24,10 +36,10 @@ const App = () => {
             </div>
             <Title text="SETTINGS:" />
             <div className="wrapper">
-                <Setting subtitle="Include Uppercase" />
-                <Setting subtitle="Include Lowercase" />
-                <Setting subtitle="Include Numbers" />
-                <Setting subtitle="Include Symbols" />
+                <Setting subtitle="Include Uppercase" updateSetting={updateIncludeUp} set={includeUp} c={accessSet} />
+                <Setting subtitle="Include Lowercase" updateSetting={updateIncludeLow} set={includeLow} c={accessSet} />
+                <Setting subtitle="Include Numbers" updateSetting={updateIncludeNum} set={includeNum} c={accessSet} />
+                <Setting subtitle="Include Symbols" updateSetting={updateIncludeSym} set={includeSym} c={accessSet} />
                 <BtnGenerate />
             </div>
         </div>

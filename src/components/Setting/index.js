@@ -1,9 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './style.css';
 
 const Setting = (props) => {
+    let btnClName = 'btn-switch',
+        switchClName = 'switch-slider';
+
+    if (props.set === true) {
+        btnClName = 'btn-switch btn-switch-on';
+        switchClName = 'switch-slider switch-slider-on';
+    }
+    if (props.set === true && props.c === 1) {
+        btnClName = 'btn-switch btn-switch-on btn-switch-block';
+        switchClName = 'switch-slider switch-slider-on switch-slider-block';
+    }
 
     function onSwitch(e) {
+        if (props.set === true && props.c === 1) return false;
+
         let btnSwitch = undefined,
             switchSlider = undefined;
 
@@ -13,21 +26,15 @@ const Setting = (props) => {
 
         switchSlider = btnSwitch.firstElementChild;
 
-        if (!btnSwitch.classList.contains('btn-switch-on')) {
-            btnSwitch.classList.add('btn-switch-on');
-            switchSlider.classList.add('switch-slider-on');
-        }
-        else {
-            btnSwitch.classList.remove('btn-switch-on');
-            switchSlider.classList.remove('switch-slider-on');
-        }
+        if (!btnSwitch.classList.contains('btn-switch-on')) props.updateSetting(true);
+        else props.updateSetting(false);
     }
 
     return (
         <div className="setting-container">
             <p className="setting-subtitle" onClick={onSwitch}>{props.subtitle}</p>
-            <div className="btn-switch" onClick={onSwitch}>
-                <div className="switch-slider"></div>
+            <div className={btnClName} onClick={onSwitch}>
+                <div className={switchClName}></div>
             </div>
         </div>
     );
