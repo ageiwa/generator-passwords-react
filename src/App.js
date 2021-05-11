@@ -24,6 +24,13 @@ const App = () => {
 
     let countSets = includeUp + includeLow + includeNum + includeSym;
 
+    const settingsProps = [
+        {id: 1, subtitle: 'Include Uppercase', updateSetting: updateIncludeUp, set: includeUp},
+        {id: 2, subtitle: 'Include Lowercase', updateSetting: updateIncludeLow, set: includeLow},
+        {id: 3, subtitle: 'Include Numbers', updateSetting: updateIncludeNum, set: includeNum},
+        {id: 4, subtitle: 'Include Symbols', updateSetting: updateIncludeSym, set: includeSym},
+    ]
+
     return (
         <div className="app">
             <Header />
@@ -36,10 +43,17 @@ const App = () => {
             </div>
             <Title text="SETTINGS:" />
             <div className="wrapper">
-                <Setting subtitle="Include Uppercase" updateSetting={updateIncludeUp} set={includeUp} activeSet={countSets} />
-                <Setting subtitle="Include Lowercase" updateSetting={updateIncludeLow} set={includeLow} activeSet={countSets} />
-                <Setting subtitle="Include Numbers" updateSetting={updateIncludeNum} set={includeNum} activeSet={countSets} />
-                <Setting subtitle="Include Symbols" updateSetting={updateIncludeSym} set={includeSym} activeSet={countSets} />
+
+                {settingsProps.map(settingProp => (
+                    <Setting
+                        key={settingProp.id}
+                        subtitle={settingProp.subtitle}
+                        updateSetting={settingProp.updateSetting}
+                        set={settingProp.set}
+                        activeSet={countSets}
+                    />
+                ))}
+                
                 <BtnGenerate />
             </div>
         </div>
