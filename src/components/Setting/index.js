@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './style.css';
 
 const Setting = (props) => {
@@ -9,22 +9,19 @@ const Setting = (props) => {
         btnClName = 'btn-switch btn-switch-on';
         switchClName = 'switch-slider switch-slider-on';
     }
-    if (props.set === true && props.c === 1) {
+    if (props.set === true && props.activeSet === 1) {
         btnClName = 'btn-switch btn-switch-on btn-switch-block';
         switchClName = 'switch-slider switch-slider-on switch-slider-block';
     }
 
     function onSwitch(e) {
-        if (props.set === true && props.c === 1) return false;
+        if (props.set === true && props.activeSet === 1) return false;
 
-        let btnSwitch = undefined,
-            switchSlider = undefined;
+        let btnSwitch = undefined;
 
         if (e.target.classList.contains('setting-subtitle')) btnSwitch = e.target.nextElementSibling;
         else if (e.target.classList.contains('btn-switch')) btnSwitch = e.target;
         else if (e.target.classList.contains('switch-slider')) btnSwitch = e.target.parentElement;
-
-        switchSlider = btnSwitch.firstElementChild;
 
         if (!btnSwitch.classList.contains('btn-switch-on')) props.updateSetting(true);
         else props.updateSetting(false);

@@ -22,7 +22,7 @@ const App = () => {
     const updateIncludeNum = (set) => setIncludeNum(set);
     const updateIncludeSym = (set) => setIncludeSym(set);
 
-    let accessSet = includeUp + includeLow + includeNum + includeSym;
+    let countSets = includeUp + includeLow + includeNum + includeSym;
 
     return (
         <div className="app">
@@ -36,10 +36,10 @@ const App = () => {
             </div>
             <Title text="SETTINGS:" />
             <div className="wrapper">
-                <Setting subtitle="Include Uppercase" updateSetting={updateIncludeUp} set={includeUp} c={accessSet} />
-                <Setting subtitle="Include Lowercase" updateSetting={updateIncludeLow} set={includeLow} c={accessSet} />
-                <Setting subtitle="Include Numbers" updateSetting={updateIncludeNum} set={includeNum} c={accessSet} />
-                <Setting subtitle="Include Symbols" updateSetting={updateIncludeSym} set={includeSym} c={accessSet} />
+                <Setting subtitle="Include Uppercase" updateSetting={updateIncludeUp} set={includeUp} activeSet={countSets} />
+                <Setting subtitle="Include Lowercase" updateSetting={updateIncludeLow} set={includeLow} activeSet={countSets} />
+                <Setting subtitle="Include Numbers" updateSetting={updateIncludeNum} set={includeNum} activeSet={countSets} />
+                <Setting subtitle="Include Symbols" updateSetting={updateIncludeSym} set={includeSym} activeSet={countSets} />
                 <BtnGenerate />
             </div>
         </div>
