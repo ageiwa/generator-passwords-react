@@ -54,7 +54,13 @@ const App = () => {
                     />
                 ))}
                 
-                <BtnGenerate />
+                <BtnGenerate
+                    lengthPassword={lengthPass}
+                    includeUppercase={includeUp}
+                    includeLowercase={includeLow}
+                    includeNumbers={includeNum}
+                    includeSymbols={includeSym}
+                />
             </div>
         </div>
     );
