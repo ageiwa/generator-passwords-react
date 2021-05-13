@@ -39,7 +39,7 @@ const App = () => {
         <div className="app">
             <Header />
             <div className="wrapper">
-                <Password password={password} />
+                <Password newPassword={password} />
             </div>
             <Title text={"LENGTH: " + lengthPass} />
             <div className="wrapper">

@@ -1,11 +1,39 @@
 .password-container {
+    position: relative;
+    overflow: hidden;
     margin-top: 30px;
     border-radius: 5px;
     width: 300px;
     height: 55px;
     background-color: #58595b;
     color: #f3f3f3;
-    font-size: 12px;
+    font-size: 1vw;
     text-align: center;
+}
+
+.password {
     line-height: 55px;
+}
+
+.info-copied, .info-click-to-copy {
+    position: absolute;
+    color: #f3f3f3;
+    bottom: -15px;
+    transition: .15s;
+}
+
+.info-copied {
+    left: 5px;
+}
+
+.info-copied-on {
+    bottom: 5px;
+}
+
+.info-click-to-copy {
+    right: 5px;
+}
+
+.info-click-to-copy-on {
+    bottom: 5px;
 }
