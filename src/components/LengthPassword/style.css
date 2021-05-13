@@ -38,3 +38,9 @@
     border: 3px solid #fff;
     background-color: #808080;
 }
+
+@media (max-width: 420px) {
+    .length-password-container {
+        width: 100%;
+    }
+}

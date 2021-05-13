@@ -4,3 +4,10 @@
     color: #f3f3f3;
     font-size: 11px;
 }
+
+@media (max-width: 420px) {
+    .title {
+        padding-left: 2vw;
+        padding-top: 15px;
+    }
+}

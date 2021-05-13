@@ -60,3 +60,9 @@
 .switch-slider-block {
     background-color: rgba(243, 243, 243, 0.5);
 }
+
+@media (max-width: 420px) {
+    .setting-container {
+        width: 100%;
+    }
+}

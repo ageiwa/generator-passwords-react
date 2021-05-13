@@ -4,3 +4,9 @@
     color: #f3f3f3;
     font-size: 20px;
 }
+
+@media (max-width: 420px) {
+    .header {
+        padding-left: 0;
+    }
+}

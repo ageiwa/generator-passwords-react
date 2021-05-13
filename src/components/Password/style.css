@@ -42,3 +42,9 @@
 .info-click-to-copy-on {
     bottom: 5px;
 }
+
+@media (max-width: 420px) {
+    .password-container {
+        width: 100%;
+    }
+}

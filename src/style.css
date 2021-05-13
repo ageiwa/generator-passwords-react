@@ -30,3 +30,17 @@ body {
     flex-direction: column;
     align-items: center;
 }
+
+@media (max-width: 420px) {
+    body {
+        background: #303235;
+    }
+
+    .app {
+        border-radius: 0;
+        padding-left: 5vw;
+        padding-right: 5vw;
+        width: 100vw;
+        height: 100vh;
+    }
+}

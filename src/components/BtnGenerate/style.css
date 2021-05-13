@@ -18,3 +18,11 @@
     background-color: #1878a8;
     letter-spacing: 0;
 }
+
+@media (max-width: 420px) {
+    .btn-generate {
+        position: absolute;
+        width: 90vw;
+        bottom: 20px;
+    }
+}
