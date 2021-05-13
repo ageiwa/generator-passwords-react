@@ -7,8 +7,13 @@
     height: 55px;
     background-color: #58595b;
     color: #f3f3f3;
-    font-size: 1vw;
+    font-size: 12px;
     text-align: center;
+    cursor: pointer;
+}
+
+.password-container:active {
+    background-color: #676869;
 }
 
 .password {
