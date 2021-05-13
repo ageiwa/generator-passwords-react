@@ -58,7 +58,7 @@ const BtnGenerate = (props) => {
             else i--;
         }
 
-        console.log(password);
+        props.updatePass(password);
     }
 
     return <button className="btn-generate" onClick={generatePassword}>GENERATE PASSWORD</button>;

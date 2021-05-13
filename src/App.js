@@ -8,18 +8,22 @@ import Setting from './components/Setting/index';
 import BtnGenerate from './components/BtnGenerate/index';
 
 const App = () => {
+    const [password, setPassword] = useState('CLICK GENERATE');
+    const updatePassword = (pass) => setPassword(pass);
+
     const [lengthPass, setLengthPass] = useState(16);
-
-    const [includeUp, setIncludeUp] = useState(true);
-    const [includeLow, setIncludeLow] = useState(false);
-    const [includeNum, setIncludeNum] = useState(false);
-    const [includeSym, setIncludeSym] = useState(false);
-
     const updateLengthPass = (length) => setLengthPass(length);
 
+    const [includeUp, setIncludeUp] = useState(true);
     const updateIncludeUp = (set) => setIncludeUp(set);
+
+    const [includeLow, setIncludeLow] = useState(false);
     const updateIncludeLow = (set) => setIncludeLow(set);
+
+    const [includeNum, setIncludeNum] = useState(false);
     const updateIncludeNum = (set) => setIncludeNum(set);
+
+    const [includeSym, setIncludeSym] = useState(false);
     const updateIncludeSym = (set) => setIncludeSym(set);
 
     let countSets = includeUp + includeLow + includeNum + includeSym;
@@ -35,7 +39,7 @@ const App = () => {
         <div className="app">
             <Header />
             <div className="wrapper">
-                <Password />
+                <Password password={password} />
             </div>
             <Title text={"LENGTH: " + lengthPass} />
             <div className="wrapper">
@@ -60,6 +64,7 @@ const App = () => {
                     includeLowercase={includeLow}
                     includeNumbers={includeNum}
                     includeSymbols={includeSym}
+                    updatePass={updatePassword}
                 />
             </div>
         </div>

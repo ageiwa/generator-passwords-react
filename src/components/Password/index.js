@@ -1,10 +1,10 @@
 import React from 'react';
 import './style.css';
 
-const Password = () => {
+const Password = (props) => {
     return (
         <div className="password-container">
-            <p className="password">PASSWORD</p>
+            <p className="password">{props.password}</p>
         </div>
     );
 }
