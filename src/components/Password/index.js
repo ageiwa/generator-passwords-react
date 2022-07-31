@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react';
+import ClipboardJS from 'clipboard';
 import './style.css';
 
 const Password = (props) => {
@@ -16,7 +17,7 @@ const Password = (props) => {
 
     function copyPassword() {
         if (password !== 'CLICK GENERATE') {
-            navigator.clipboard.writeText(password);
+            new ClipboardJS('.password-container');
 
             refCopied.current.classList.add('info-copied-on');
             refClickToCopy.current.classList.remove('info-click-to-copy-on');
@@ -24,7 +25,7 @@ const Password = (props) => {
     }
     
     return (
-        <div className="password-container" onClick={copyPassword}>
+        <div className="password-container" onClick={copyPassword} data-clipboard-text={password}>
             <span className="info-copied" ref={refCopied}>copied</span>
             <p className="password">{password}</p>
             <span className="info-click-to-copy" ref={refClickToCopy}>click to copy</span>
